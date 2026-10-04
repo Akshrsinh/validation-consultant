@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Site Pharmaceutical AMV Consultant | Regulatory Validation Expert</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0ea5e9;
+            --accent-hover: #0284c7;
+            --success: #10b981;
+            --text-main: #334155;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-cta-btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .nav-cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 11rem 2rem 7rem 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: rgba(14, 165, 233, 0.2);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .stat-card h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .stat-card p { font-size: 0.9rem; color: #cbd5e1; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-image-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+
+        .image-container {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            background: #e2e8f0;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-image-card:hover .image-container img {
+            transform: scale(1.08);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(15, 23, 42, 0.85);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-price-box {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--success);
+        }
+
+        .card-price-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .card-old-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .card-new-price {
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .card-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .service-image-card:hover .card-btn {
+            background: var(--accent);
+        }
+
+        .matrix-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 5rem;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .matrix-column h4 { font-size: 1.2rem; margin-bottom: 1.5rem; }
+        .matrix-column.expert h4 { color: var(--accent); }
+        .matrix-column.client h4 { color: #64748b; }
+        .matrix-list { list-style: none; }
+        .matrix-list li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; font-size: 0.95rem; }
+        
+        .matrix-column.expert .matrix-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+        .matrix-column.client .matrix-list li::before { content: "⚙"; position: absolute; left: 0; color: #64748b; }
+
+        .promo-banner {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 5rem;
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: var(--primary); color: white; padding: 1.2rem 1.5rem; }
+        td { padding: 1.2rem 1.5rem; border-bottom: 1px solid #e2e8f0; }
+        tr:hover td { background-color: #f8fafc; }
+        .package-name { font-weight: 600; color: var(--primary); }
+        .old-price { text-decoration: line-through; color: #94a3b8; font-size: 0.9rem; margin-right: 0.5rem; }
+        .new-price { color: var(--success); font-weight: 700; font-size: 1.1rem; }
+        
+        .table-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .table-btn:hover { background: var(--accent); }
+
+        .faq-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.5rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--text-main); font-size: 0.95rem; }
+
+        .footer-cta {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .phone-link {
+            font-size: 2.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 2px dashed rgba(14, 165, 233, 0.4);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .phone-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .matrix-grid { grid-template-columns: 1fr; }
+            .phone-link { font-size: 1.6rem; padding: 0.8rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">AMV<span>Consultant</span></div>
+            <a href="tel:+919157388490" class="nav-cta-btn">Call: +91 9157388490</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">On-Site Consulting Model</div>
+            <h1>Empower Your Lab With Expert Analytical Method Validation</h1>
+            <p>Skip the massive capital investment of building your own laboratory. I position myself directly within your facility to drive execution, regulatory strategy, data review, and robust ICH compliance.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-card"><h3>100%</h3><p>Audit Compliance</p></div>
+                <div class="stat-card"><h3>Zero</h3><p>Lab Capital Required</p></div>
+                <div class="stat-card"><h3>On-Site</h3><p>Technical Supervision</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="services">
+            <div class="section-title"><h2>Our Technical Core Services</h2></div>
+            <div class="services-grid">
+                
+                <div class="service-image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="HPLC Instrument Research">
+                        <div class="card-tag">ICH Q2 Guide</div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>HPLC & GC Method Validation</h3>
+                            <p>End-to-end strategic planning and execution oversight for Assay, Related Substances, and Dissolution profiles on your instruments.</p>
+                        </div>
+                        <div>
+                            <div class="card-price-box">
+                                <div class="card-price-label">Special Price</div>
+                                <span class="card-old-price">₹50,000 - ₹1.25 Lakh</span>
+                                <span class="card-new-price">₹30,000 - ₹75,000</span>
+                            </div>
+                            <a href="tel:+919157388490" class="card-btn">Book Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-image-card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=600&q=80" alt="Cleaning Validation Swab Testing">
+                        <div class="card-tag">GMP Residue Control</div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h3>Cleaning Validation Packages</h3>
+                            <p>Complete protocol development, recovery studies, and swab/rinse direct sampling methodologies to ensure zero cross-contamination.</p>
+                        </div>
+                        <div>
+                            <div class="card-price-box">
+                                <div class="card-price-label">Special Price</div>
+                                <span class="card-old-price">₹40,000 - ₹1 Lakh</span>
+                                <span class="card-new-price">₹24,000 - ₹60,000</span>
+                            </div>
+                            <a href="tel:+919157388490" class="card-btn">Book Service</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="boundary">
+            <div class="matrix-box">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.8rem; color: var(--primary);">Operational Responsibility Matrix</h3>
+                </div>
+                <div class="matrix-grid">
+                    <div class="matrix-column expert">
+                        <h4>Consultant Provides:</h4>
+                        <ul class="matrix-list">
+                            <li>Validation Strategy & Master Protocol Design</li>
+                            <li>Execution Supervision & Technical Guidance</li>
+                            <li>Statistical Evaluations & Validation Reporting</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-column client">
+                        <h4>Client Lab Provides:</h4>
+                        <ul class="matrix-list">
+                            <li>Fully Qualified Instruments & Reagents</li>
+                            <li>Authorized Laboratory Analysts for Execution</li>
+                            <li>Full Accountability for GMP Data Integrity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="section-title"><h2>Additional Quality & Documentation Packages</h2></div>
+            <div class="promo-banner">🎉 Special Promotional Offer: 40% Flat Discount Applied Across All Packages!</div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service Package</th>
+                            <th>Original Price</th>
+                            <th>Discounted Price (40% OFF)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="package-name">Data Review</td><td><span class="old-price">₹5,000 – ₹15,000</span></td><td><span class="new-price">₹3,000 – ₹9,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Calculation/Statistical Review</td><td><span class="old-price">₹5,000 – ₹20,000</span></td><td><span class="new-price">₹3,000 – ₹12,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Validation Protocol Writing</td><td><span class="old-price">₹10,000 – ₹30,000</span></td><td><span class="new-price">₹6,000 – ₹18,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Validation Report Compiling</td><td><span class="old-price">₹15,000 – ₹40,000</span></td><td><span class="new-price">₹9,000 – ₹24,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Assay Validation Package</td><td><span class="old-price">₹30,000 – ₹60,000</span></td><td><span class="new-price">₹18,000 – ₹36,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Method Transfer Support</td><td><span class="old-price">₹25,000 – ₹75,000</span></td><td><span class="new-price">₹15,000 – ₹45,000</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Complete AMV Consultancy</td><td><span class="old-price">₹75,000 – ₹2.5 Lakh+</span></td><td><span class="new-price">₹45,000 – ₹1.50 Lakh+</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                        <tr><td class="package-name">Monthly QC Retainer Consultancy</td><td><span class="old-price">₹30,000 – ₹1 Lakh/mo</span></td><td><span class="new-price">₹18,000 – ₹60,000/mo</span></td><td><a href="tel:+919157388490" class="table-btn">Book Now</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; color: #64748b; text-align: center; margin-top: 1rem;">*Note: Travel, lodging, and boarding arrangements are to be provided or reimbursed separately by the client entity.</p>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.8rem; color: var(--primary);">Frequently Asked Questions (FAQ)</h3>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q1: How does the on-site AMV consultancy model benefit our company?</div>
+                <div class="faq-answer">A: It saves your company massive external laboratory costs. By utilizing your internal qualified instruments and analysts, you maintain full control over your samples while I handle regulatory protocols, strategy, calculations, and data review to ensure smooth audit compliance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q2: Who takes responsibility for data integrity and GMP raw data?</div>
+                <div class="faq-answer">A: Your laboratory remains fully responsible for instrument calibrations, system access control, and raw data generation. I provide independent technical consultancy, protocol design, and secondary data evaluations to guarantee compliance with ICH Q2 benchmarks.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q3: How are unexpected results, deviations, or OOS investigations handled?</div>
+                <div class="faq-answer">A: In case of validation incidents, I deliver a comprehensive technical risk assessment and scientifically backed justification to identify root causes to support your QA team during closure.</div>
+            </div>
+        </section>
+    </div>
+
+    <section class="footer-cta">
+        <div class="cta-box">
+            <h2>Ready to Streamline Your Validation Project?</h2>
+            <p>Get a direct expert consultation today. Let's discuss your timeline and method requirements.</p>
+            <a href="tel:+919157388490" class="phone-link">📞 Call: +91 9157388490</a>
+        </div>
+    </section>
+
+</body>
+</html>
